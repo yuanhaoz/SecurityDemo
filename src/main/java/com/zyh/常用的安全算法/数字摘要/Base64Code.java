@@ -1,4 +1,4 @@
-package com.zyh.数字摘要;
+package com.zyh.常用的安全算法.数字摘要;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

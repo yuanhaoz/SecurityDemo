@@ -1,4 +1,4 @@
-package com.zyh.数字摘要;
+package com.zyh.常用的安全算法.数字摘要;
 
 /**
  * 基于 Java 的十六进制编码与解码的实现。
@@ -40,7 +40,7 @@ public class HexCode {
      * @param hex 十六进制编码数据
      * @return 二进制数据
      */
-    private static byte[] hex2bytes(String hex) {
+    public static byte[] hex2bytes(String hex) {
         byte[] bytes = new byte[hex.length()/2];
         for (int i = 0; i < hex.length(); i = i + 2) {
             String subStr = hex.substring(i, i + 2);

@@ -1,6 +1,6 @@
 package com.zyh.文件类型判断;
 
-import com.zyh.数字摘要.HexCode;
+import com.zyh.常用的安全算法.数字摘要.HexCode;
 
 import java.io.FileInputStream;
 import java.io.IOException;

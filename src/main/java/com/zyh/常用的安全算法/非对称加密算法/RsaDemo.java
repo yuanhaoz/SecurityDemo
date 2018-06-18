@@ -1,9 +1,8 @@
-package com.zyh.非对称加密算法;
+package com.zyh.常用的安全算法.非对称加密算法;
 
-import com.zyh.数字摘要.Base64Code;
+import com.zyh.常用的安全算法.数字摘要.Base64Code;
 
 import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
@@ -131,6 +130,34 @@ public class RsaDemo {
     public static byte[] privateDecrypt(byte[] content, PrivateKey privateKey) throws Exception {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        byte[] bytes = cipher.doFinal(content);
+        return bytes;
+    }
+
+    /**
+     * 利用 公钥 解密
+     * @param content 待解密的数据
+     * @param publicKey 公钥
+     * @return 明文
+     * @throws Exception 异常
+     */
+    public static byte[] publicDecrypt(byte[] content, PublicKey publicKey) throws Exception {
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE, publicKey);
+        byte[] bytes = cipher.doFinal(content);
+        return bytes;
+    }
+
+    /**
+     * 利用 私钥 加密
+     * @param content 待加密的数据
+     * @param privateKey 私钥
+     * @return 密文
+     * @throws Exception 异常
+     */
+    public static byte[] privateEncrypt(byte[] content, PrivateKey privateKey) throws Exception {
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.ENCRYPT_MODE, privateKey);
         byte[] bytes = cipher.doFinal(content);
         return bytes;
     }
