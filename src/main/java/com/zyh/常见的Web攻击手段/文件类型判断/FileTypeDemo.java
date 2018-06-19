@@ -1,4 +1,4 @@
-package com.zyh.文件类型判断;
+package com.zyh.常见的Web攻击手段.文件类型判断;
 
 import com.zyh.常用的安全算法.数字摘要.HexCode;
 
